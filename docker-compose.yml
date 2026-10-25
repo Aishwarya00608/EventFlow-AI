@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  eventflow:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: eventflow-ai
+    ports:
+      - "8000:8000"
+    environment:
+      - GEMINI_API_KEY=${GEMINI_API_KEY:-}
+      - GEMMA_MODEL_ID=${GEMMA_MODEL_ID:-gemini-2.5-flash}
+      - RESEND_API_KEY=${RESEND_API_KEY:-}
+      - RESEND_FROM_EMAIL=${RESEND_FROM_EMAIL:-EventFlow AI <onboarding@resend.dev>}
+      - SIMULATION_MODE=${SIMULATION_MODE:-true}
+      - FRONTEND_URL=http://localhost:5173
+    volumes:
+      - ./backend/static/certificates:/app/backend/static/certificates
+      - ./backend/static/uploads:/app/backend/static/uploads
+      - ./data:/app/data
+    restart: unless-stopped

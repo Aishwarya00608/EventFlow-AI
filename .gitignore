@@ -1,0 +1,79 @@
+# Environment files & secrets
+.env
+.env.local
+.env.*.local
+*.env
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual Environments
+.venv/
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# Testing & Coverage
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.nox/
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+eventflow.db
+backend/eventflow.db
+
+# Dynamic backend uploads & generated artifacts
+backend/static/certificates/*.pdf
+backend/static/certificates/*.png
+backend/static/certificates/*.zip
+backend/static/templates/template_*
+backend/static/uploads/*
+!backend/static/certificates/.gitkeep
+!backend/static/templates/.gitkeep
+!backend/static/uploads/.gitkeep
+
+# Node & Frontend
+frontend/node_modules/
+frontend/dist/
+frontend/dist-ssr/
+frontend/*.local
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# IDE & OS files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
